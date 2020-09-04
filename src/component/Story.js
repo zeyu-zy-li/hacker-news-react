@@ -5,7 +5,7 @@ export default function Story(props) {
     const [story, setStory] = useState({});
     useEffect(() => {
         getStory(props.id).then((resp) => {
-            setStory(resp.data);
+            setStory(resp);
         })
     }, [props.id])
     return (

@@ -6,7 +6,8 @@ function StoryList(props) {
   const [storyIds, setStoryIds] = useState([]);
   useEffect(() => {
     getStoryIds(props.filter).then((resp) => {
-      setStoryIds(resp.data);
+      setStoryIds(resp);
+      console.log(resp);
     })
   }, [props.filter])
 
