@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import StoryList from "./component/StoryList";
+import { Button } from "reactstrap";
 
 function App() {
   return (
@@ -44,7 +45,11 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <div>
+        <Button> Just click me</Button>
+      </div>
     </Router>
+    
   );
 }
 

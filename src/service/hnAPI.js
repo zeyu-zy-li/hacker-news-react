@@ -12,29 +12,12 @@ const storyUrl = `${baseUrl}item/`;
 //     return axios.get(`${storyUrl}${id}.json`);
 // }
 
-export function getStoryIds(filter) {
-    return new Promise((resolve, reject) => {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(this.responseText);
-                resolve(JSON.parse(this.responseText));
-            }
-        };
-        xhr.open("GET", `${baseUrl}${filter}stories.json`);
-        xhr.send();
-    });
+export async function getStoryIds(filter) {
+    let data = await fetch(`${baseUrl}${filter}stories.json`);
+    return await data.json()        
 }
 
-export function getStory(id) {
-    return new Promise((resolve, reject) => {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                resolve(JSON.parse(this.responseText));
-            }
-        };
-        xhr.open("GET", `${storyUrl}${id}.json`);
-        xhr.send();
-    });
+export async function getStory(id) {
+    let data = await fetch(`${storyUrl}${id}.json`);
+    return await data.json()
 }

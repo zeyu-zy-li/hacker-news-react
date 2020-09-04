@@ -6,6 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.list-group-item:visited{
+  background-color: lightgrey;
+  color:red;
+}
+.list-group-item:hover{
+  background-color: navy;
+  color:tomato;
+
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
